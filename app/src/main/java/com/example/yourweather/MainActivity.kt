@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
             .addConverterFactory(GsonConverterFactory.create())
             .baseUrl("https://api.openweathermap.org/data/2.5/")
             .build().create(ApiInterface::class.java)
-        val response = retrofit.getWeatherData(cityName, "4958664668373a9eec8bdd882afbc0d2", "metric")
+        val response = retrofit.getWeatherData(cityName, "Enter you API ID here", "metric")
         response.enqueue(object :Callback<WeatherApp>{
             override fun onResponse(call: Call<WeatherApp>, response: Response<WeatherApp>) {
                 val responseBody = response.body()
